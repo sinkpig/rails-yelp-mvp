@@ -1,0 +1,37 @@
+<div class="mb-4 bg-dark" style="background-image: url('https://source.unsplash.com/random/1280x720/?<%= @restaurant.name %>'); background-repeat: no-repeat; background-size: cover;">
+  <div class="container py-5">
+    <h1 class="display-5 fw-bold text-white"><%= @restaurant.name %></h1>
+    <p class="col-md-8 text-white fs-4"><%= @restaurant.reviews.count %> reviews</p>
+    <button class="btn btn-outline-light btn-lg" type="button">Call restaurant</button>
+  </div>
+</div>
+<div class="container my-3">
+  <div class="row justify-content-center">
+    <div class="col-8">
+      <div class="d-flex mb-3">
+        <%= link_to 'Leave a review', new_restaurant_review_path(@restaurant), class: "btn btn-danger me-2" %>
+        <a href="#" class="btn btn-outline-secondary me-2">Share</a>
+        <a href="#" class="btn btn-outline-secondary">Save</a>
+      </div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non blandit massa enim nec. Dolor sit amet consectetur adipiscing. Ultricies tristique nulla aliquet enim tortor at auctor. Convallis tellus id interdum velit laoreet id donec ultrices tincidunt. Amet tellus cras adipiscing enim eu turpis egestas pretium. Volutpat est velit egestas dui id. Diam vel quam elementum pulvinar etiam non quam. Lectus quam id leo in vitae. Eu facilisis sed odio morbi. Mauris commodo quis imperdiet massa tincidunt.
+      <br><br>
+      brMattis enim ut tellus elementum sagittis vitae et. Diam ut venenatis tellus in metus vulputate eu scelerisque. Eget mi proin sed libero. Tellus elementum sagittis vitae et leo duis ut diam. Mauris pharetra et ultrices neque ornare. At risus viverra adipiscing at in tellus. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin. Et leo duis ut diam quam nulla porttitor. Sed libero enim sed faucibus turpis in eu. Arcu dui vivamus arcu felis bibendum. Mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque. Blandit volutpat maecenas volutpat blandit. Massa id neque aliquam vestibulum morbi blandit. Tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada. Sem nulla pharetra diam sit amet. Mollis aliquam ut porttitor leo a diam sollicitudin tempor
+      <br><br>
+      Turpis massa tincidunt dui ut ornare lectus sit amet. Nisl tincidunt eget nullam non nisi est. Interdum posuere lorem ipsum dolor sit amet consectetur. Quam quisque id diam vel. Gravida rutrum quisque non tellus orci ac auctor. Bibendum est ultricies integer quis auctor elit sed vulputate. Aliquet nibh praesent tristique magna sit. Suspendisse sed nisi lacus sed viverra tellus in. Quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus mattis. Morbi tempus iaculis urna id volutpat. Aenean et tortor at risus viverra adipiscing. Sagittis vitae et leo duis ut diam quam nulla porttitor. Aliquet bibendum enim facilisis gravida. Odio ut sem nulla pharetra diam sit amet nisl suscipit. Sed sed risus pretium quam. Amet commodo nulla facilisi nullam vehicula ipsum a arcu cursus. Tortor condimentum lacinia quis vel eros donec ac odio.</p>
+    </div>
+    <div class="col-2">
+      <div class="card">
+        <div class="card-body">
+          <h6 class="text-danger fw-bolder">Category</h6>
+          <p class="card-text"><%= @restaurant.category.capitalize %></p>
+          <hr>
+          <h6 class="text-danger fw-bolder">Phone Number</h6>
+          <p class="card-text"><%= @restaurant.phone_number %></p>
+          <hr>
+          <h6 class="text-danger fw-bolder">Address</h6>
+          <p class="card-text"><%= @restaurant.address %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

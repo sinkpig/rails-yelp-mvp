@@ -1,0 +1,8 @@
+<div class="container my-5">
+  <h1 class="text-center mb-4">Restaurants</h1>
+  <div class="row justify-content-center mx-auto">
+    <% @restaurants.each do |restaurant| %>
+      <%= render 'restaurant', restaurant: restaurant %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="container py-5">
+  <h1 class="mb-3">Create a new restaurant</h1>
+  <div class="row justify-content-center">
+    <%= simple_form_for(@restaurant) do |f| %>
+      <%= f.input :name, class: "mb-2" %>
+      <%= f.input :address, class: "mb-2" %>
+      <%= f.input :phone_number, class: "mb-2" %>
+      <%= f.input :category, collection: ['chinese', 'italian', 'japanese', 'french', 'belgian'] %>
+      <%= f.submit "Create Restaurant", class: "btn btn-danger" %>
+    <% end %>
+  </div>
+</div>

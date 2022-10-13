@@ -1,0 +1,12 @@
+<div class="col-3 mb-4">
+  <div class="card">
+    <img src="https://source.unsplash.com/random/200x100/?<%= restaurant.name %>" class="card-img-top">
+    <div class="card-body">
+      <h6 class="card-title" style="font-weight: 800;"><%= restaurant.name %>
+        <span style="font-weight: 400;">(<%= restaurant.reviews.count %> reviews)</span>
+      </h6>
+      <p class="card-text"><%= restaurant.address %></p>
+      <%= link_to 'Show me', restaurant_path(restaurant), class: "btn btn-outline-danger stretched-link" %>
+    </div>
+  </div>
+</div>
