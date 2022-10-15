@@ -2,6 +2,9 @@ class RestaurantsController < ApplicationController
 
   def index
     @restaurants = Restaurant.all
+    if params[:query].present?
+      @restaurants = Restaurant.where("name LIKE '%#{params[:query]}%' OR CATEGORY LIKE '%#{params[:query]}%'")
+    end
   end
 
   def show

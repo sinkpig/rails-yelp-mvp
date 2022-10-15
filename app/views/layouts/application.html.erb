@@ -14,12 +14,12 @@
   <body>
     <nav class="navbar border-bottom">
       <div class="container">
-        <a class="navbar-brand" href="#">
+        <%= link_to restaurants_path, class: "navbar-brand" do %>
           <img src="https://s3-media0.fl.yelpcdn.com/assets/srv0/yelp_design_cdn/7ef71bf77a33/assets/img/brand/logo_desktop.svg" alt="Logo" width="80" class="d-inline-block align-text-top">
-        </a>
+        <% end %>
         <div class="d-flex">
           <form class="input-group me-3 shadow" role="search" style="width: initial;">
-            <input class="form-control border-0" type="search" placeholder="Search Restaurants" aria-label="Search" style="width: 600px;">
+            <input class="form-control border-0" name="query" type="search" placeholder="Search Restaurants" aria-label="Search" style="width: 600px;">
             <button class="btn btn-danger" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
           </form>
           <%= link_to 'Create Restaurant', new_restaurant_path, class: "btn btn-outline-danger fw-bold" %>
