@@ -1,12 +1,21 @@
-<div class="col-3 mb-4">
+<div class="col-12 mb-4">
   <div class="card">
-    <img src="https://source.unsplash.com/random/200x100/?<%= restaurant.name %>" class="card-img-top">
-    <div class="card-body">
-      <h6 class="card-title" style="font-weight: 800;"><%= restaurant.name %>
-        <span style="font-weight: 400;">(<%= restaurant.reviews.count %> reviews)</span>
-      </h6>
-      <p class="card-text"><%= restaurant.address %></p>
-      <%= link_to 'Show me', restaurant_path(restaurant), class: "btn btn-outline-danger stretched-link" %>
+    <div class="row g-0">
+      <div class="col-4">
+        <img src="https://source.unsplash.com/random/200x200/?<%= restaurant.name %>" class="card-img-top" height="200px" width="200px">
+      </div>
+      <div class="col-8">
+        <div class="card-body">
+          <h5 class="card-title" style="font-weight: 800;"><%= "#{i + 1}. #{restaurant.name}"  %></h5>
+          <div>
+            <span class="badge rounded-4 fw-bold text-light" style="background-color: #FF643D;"><%= restaurant.reviews.size > 0 ? restaurant.reviews.rating.sum(0) / restaurant.reviews.size : "0" %><i class="fa-solid fa-star ms-2"></i></span>
+            <span class="text-muted"><%= restaurant.reviews.count %></span>
+          </div>
+          <div class="badge rounded-4 bg-secondary text-secondary mb-2" style="background-color: #F0F0F0 !important;"><%= restaurant.category.capitalize %></div>
+          <small class="d-block"><span class="text-success fw-bold">Open</span> until 10PM</small>
+          <%= link_to 'Show me', restaurant_path(restaurant), class: "btn btn-outline-danger stretched-link" %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

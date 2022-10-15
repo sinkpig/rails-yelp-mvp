@@ -6,18 +6,24 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.2/css/all.css">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <nav class="navbar bg-danger">
+    <nav class="navbar border-bottom">
       <div class="container">
         <a class="navbar-brand" href="#">
-          <img src="https://s3-media0.fl.yelpcdn.com/assets/srv0/yelp_design_cdn/2d2a7a4342fc/assets/img/brand/logo_desktop_white.svg" alt="Logo" width="80" class="d-inline-block align-text-top">
+          <img src="https://s3-media0.fl.yelpcdn.com/assets/srv0/yelp_design_cdn/7ef71bf77a33/assets/img/brand/logo_desktop.svg" alt="Logo" width="80" class="d-inline-block align-text-top">
         </a>
-        <%= link_to 'Create Restaurant', new_restaurant_path, class: "btn btn-outline-light" %>
+        <div class="d-flex">
+          <form class="input-group me-3 shadow" role="search" style="width: initial;">
+            <input class="form-control border-0" type="search" placeholder="Search Restaurants" aria-label="Search" style="width: 600px;">
+            <button class="btn btn-danger" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+          <%= link_to 'Create Restaurant', new_restaurant_path, class: "btn btn-outline-danger fw-bold" %>
+        </div>
       </div>
     </nav>
     <%= yield %>

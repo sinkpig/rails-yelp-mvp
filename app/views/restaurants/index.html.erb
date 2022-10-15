@@ -1,8 +1,63 @@
 <div class="container my-5">
-  <h1 class="text-center mb-4">Restaurants</h1>
-  <div class="row justify-content-center mx-auto">
-    <% @restaurants.each do |restaurant| %>
-      <%= render 'restaurant', restaurant: restaurant %>
-    <% end %>
+  <div class="row justify-content-start">
+    <div class="col-2 position-sticky">
+      <h6 class="fw-bolder mb-3">Filtros</h6>
+      <div class="btn-group btn-group-sm w-100 mb-3" role="group" aria-label="Vertical radio toggle button group">
+        <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio1" autocomplete="off">
+        <label class="btn btn-outline-secondary text-dark" for="vbtn-radio1" style="border-top-left-radius: 15px; border-bottom-left-radius: 15px;">$</label>
+        <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio2" autocomplete="off">
+        <label class="btn btn-outline-secondary text-dark" for="vbtn-radio2">$$</label>
+        <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+        <label class="btn btn-outline-secondary text-dark" for="vbtn-radio3">$$$</label>
+        <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio4" autocomplete="off">
+        <label class="btn btn-outline-secondary text-dark" for="vbtn-radio4" style="border-top-right-radius: 15px; border-bottom-right-radius: 15px;">$$$$</label>
+      </div>
+      <hr>
+      <h6 class="fw-bolder mb-3">Sugerido</h6>
+      <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
+        <label class="form-check-label" for="flexCheckDefault1">
+          Aberto agora <span class="text-muted">7:29 PM</span>
+        </label>
+      </div>
+      <hr>
+      <h6 class="fw-bolder mb-3">Recursos</h6>
+      <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
+        <label class="form-check-label" for="flexCheckDefault2">
+          Bom para grupos
+        </label>
+      </div>
+      <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
+        <label class="form-check-label" for="flexCheckDefault2">
+          Bom para Crianças
+        </label>
+      </div>
+      <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
+        <label class="form-check-label" for="flexCheckDefault2">
+          Tem TV
+        </label>
+      </div>
+      <a class="fw-bolder" href="#">Ver tudo</a>
+      <hr>
+    </div>
+    <div class="col-7">
+      <div class="row justify-content-center mb-4">
+        <div class="col-9">
+          <small class="fw-bold" style="opacity: .7;">Rio de Janeiro > Restaurantes</small>
+          <h1 class="fw-bolder">O melhor em Restaurantes: Rio de Janeiro - RJ</h1>
+        </div>
+        <div class="col align-self-end ps-0">
+          <small>Ordenar: <span class="fw-bold">Recomendada</span><i class="fa-solid fa-chevron-down ms-2"></i></small>
+        </div>
+      </div>
+      <div class="row flex-column justify-content-center mx-auto">
+        <% @restaurants.each_with_index do |restaurant, i| %>
+          <%= render 'restaurant', restaurant: restaurant, i: i %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
